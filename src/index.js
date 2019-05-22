@@ -7,7 +7,7 @@ const initialState = {
   chips: null
 };
 
-function reducer(state, action) {
+function reducer(state = initialState, action) {
   switch(action.type) {
     case 'ADD_DRINK':
       return { ...state, drink: action.payload };
