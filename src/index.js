@@ -21,6 +21,8 @@ function reducer(state = initialState, action) {
       return { ...state, sandwich: [] };
     case 'REMOVE_CHIPS':
       return { ...state, chips: [] };
+    case 'REMOVE_ONE_CHIP':
+      return { ...state, chips: state.chips.filter(item => item !== action.payload) }
     default:
       return state;
   }
@@ -58,6 +60,13 @@ store.dispatch({
 });
 
 console.log('chips added', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_ONE_CHIP',
+  payload: 'Doritos'
+});
+
+console.log('one chip removed', store.getState());
 
 store.dispatch({
   type: 'REMOVE_DRINK'
