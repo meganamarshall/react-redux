@@ -28,5 +28,36 @@ function reducer(state = initialState, action) {
 
 const store = createStore(reducer);
 
+store.dispatch({
+  type: 'ADD_DRINK',
+  payload: 'Diet Coke'
+});
 
+console.log('drink added', store.getState());
+
+store.dispatch({
+  type: 'ADD_SANDWICH',
+  payload: 'Field Roast'
+});
+
+console.log('sandwich added', store.getState());
+
+store.dispatch({
+  type: 'ADD_CHIPS',
+  payload: 'Juanitas'
+});
+
+console.log('chips added', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_DRINK'
+});
+
+console.log('drink removed', store.getState());
+
+store.dispatch({
+  type: 'REMOVE_SANDWICH'
+});
+
+console.log('sandwich removed', store.getState());
 
