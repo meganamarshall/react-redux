@@ -1,0 +1,18 @@
+const ADD_DRINK = 'ADD_DRINK';
+const ADD_SANDWICH = 'ADD_SANDWICH';
+const ADD_CHIPS = 'ADD_CHIPS';
+const REMOVE_DRINK = 'REMOVE_DRINK';
+const REMOVE_SANDWICH = 'REMOVE_SANDWICH';
+const REMOVE_CHIPS = 'REMOVE_CHIPS';
+const REMOVE_ONE_CHIP = 'REMOVE_ONE_CHIP';
+
+const addDrink = drink => ({
+  type: ADD_DRINK,
+  payload: drink
+});
+
+
+
+
+
+export { ADD_DRINK, ADD_SANDWICH, ADD_CHIPS, REMOVE_CHIPS, REMOVE_DRINK, REMOVE_SANDWICH, REMOVE_ONE_CHIP, addDrink };
