@@ -12,15 +12,15 @@ function reducer(state = initialState, action) {
     case 'ADD_DRINK':
       return { ...state, drink: [...state.drink, action.payload] };
     case 'ADD_SANDWICH':
-      return { ...state, sandwich: action.payload };
+      return { ...state, sandwich: [...state.sandwich, action.payload] };
     case 'ADD_CHIPS':
-      return { ...state, chips: action.payload };
+      return { ...state, chips: [...state.chips, action.payload] };
     case 'REMOVE_DRINK':
-      return { ...state, drink: null };
+      return { ...state, drink: [] };
     case 'REMOVE_SANDWICH':
-      return { ...state, sandwich: null };
+      return { ...state, sandwich: [] };
     case 'REMOVE_CHIPS':
-      return { ...state, chips: null };
+      return { ...state, chips: [] };
     default:
       return state;
   }
@@ -50,6 +50,11 @@ console.log('sandwich added', store.getState());
 store.dispatch({
   type: 'ADD_CHIPS',
   payload: 'Juanitas'
+});
+
+store.dispatch({
+  type: 'ADD_CHIPS',
+  payload: 'Doritos'
 });
 
 console.log('chips added', store.getState());
