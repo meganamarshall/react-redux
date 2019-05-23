@@ -10,7 +10,8 @@ export default function reducer(state = initialState, action) {
       return [...state.slice(0, action.payload), ...state.slice(action.payload + 1)];
     case UPDATE_POST:
       return [...state.slice(0, action.payload), { ...state[action.payload.postId], postBody: action.payload.postBody }, ...state.slice(action.payload.postId + 1)];
-      
+    default:
+      return state;
   }
 }
  
