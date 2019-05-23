@@ -2,18 +2,18 @@ import { ADD_COMMENT, addComment, DELETE_COMMENT, deleteComment } from './commen
 
 describe('comment actions', () => {
   it('creates an add comment action', () => {
-    const comment = {
-      commentBody: 'hello'
-    };
-    expect(addComment(comment)).toEqual({
+    const comment = 'hello';
+    const postId = 0;
+
+    expect(addComment(postId, comment)).toEqual({
       type: ADD_COMMENT,
-      payload: comment
+      payload: { postId: 0, comment: 'hello' }
     });
   });
   it('creates a delete comment action', () => {
-    expect(deleteComment(0)).toEqual({
+    expect(deleteComment(0, 0)).toEqual({
       type: DELETE_COMMENT,
-      payload: 0
+      payload: { postId: 0, commentId: 0 }
     });
   });
 });

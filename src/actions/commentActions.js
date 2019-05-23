@@ -1,14 +1,14 @@
 const ADD_COMMENT = 'ADD_COMMENT';
 const DELETE_COMMENT = 'DELETE_COMMENT';
 
-const addComment = comment => ({
+const addComment = (postId, comment) => ({
   type: ADD_COMMENT,
-  payload: comment
+  payload: { postId, comment }
 });
 
-const deleteComment = commentId => ({
+const deleteComment = (postId, commentId) => ({
   type: DELETE_COMMENT,
-  payload: commentId
+  payload: { postId, commentId }
 });
 
 export { addComment, ADD_COMMENT, deleteComment, DELETE_COMMENT };
