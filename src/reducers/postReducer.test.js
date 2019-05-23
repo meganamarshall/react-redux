@@ -3,30 +3,23 @@ import { addPost, deletePost, updatePost } from '../actions/postActions';
 
 describe('post reducer', () => {
   it('handles the add post action', () => {
-    const initialState = {
-      posts: []
-    };
-    const newState = reducer(initialState, addPost({ postId: '1234', postBody: 'hello', postTitle: 'hello2' }));
-    expect(newState).toEqual({
-      posts: [{ postId: '1234', postBody: 'hello', postTitle: 'hello2' }]
-    });
+    const initialState = [];
+    const newState = reducer(initialState, addPost({ postBody: 'hello', postTitle: 'hello2' }));
+    expect(newState).toEqual(
+      [{ postBody: 'hello', postTitle: 'hello2' }]
+    );
   });
   it('handles the delete post action', () => {
-    const initialState = {
-      posts: [{ postId: '1234', postBody: 'hello', postTitle: 'title' }, { postId: '5678', postBody: 'hello there', postTitle: 'title' }]
-    };
-    const newState = reducer(initialState, deletePost('1234'));
-    expect(newState).toEqual({
-      posts: [{ postId: '5678', postBody: 'hello there', postTitle: 'title' }]
-    });
+    const initialState = [{ postBody: 'hello', postTitle: 'title' }, { postBody: 'hello there', postTitle: 'title' }];
+    const newState = reducer(initialState, deletePost(0));
+    expect(newState).toEqual([{ postBody: 'hello there', postTitle: 'title' }]);
   });
   it('handles the update post action', () => {
-    const initialState = {
-      posts: [{ postId: '1234', postBody: 'hello', postTitle: 'title' }, { postId: '5678', postBody: 'hello there', postTitle: 'title' }]
+    const initialState = [{ postBody: 'hello', postTitle: 'title' }, { postBody: 'hello there', postTitle: 'title' }]
     };
-    const newState = reducer(initialState, updatePost('1234', 'new body'));
+    const newState = reducer(initialState, updatePost(0, 'new body'));
     expect(newState).toEqual({
-      posts: [{ postId: '1234', postBody: 'new body', postTitle: 'title' }, { postId: '5678', postBody: 'hello there', postTitle: 'title' }]
+      posts: [{ postBody: 'new body', postTitle: 'title' }, { postBody: 'hello there', postTitle: 'title' }]
     });
   });
 });

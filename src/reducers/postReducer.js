@@ -7,20 +7,17 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch(action.type) {
     case ADD_POST:
-      return { ...state, posts: [...state.posts, action.payload] };
+      return [...state, action.payload];
     case DELETE_POST:
-      return { ...state, posts: state.posts.filter(({ postId }) => postId !== action.payload) };
+      return [...state.slice(0, action.payload), ...state.slice(action.payload + 1)];
     case UPDATE_POST:
       return { ...state, posts: state.posts.filter(({ postId }) => {
-        console.log(postId);
         return postId === action.payload.postId;
-        //  .map(post => ({
-      // ...post, postBody: action.payload.postBody
       }).map(post => {
-        console.log(post);
-        console.log({ ...post, postBody: action.payload.postBody });
+        return ({ ...state, posts: [{ ...post, postBody: action.payload.postBody }] });
       })
-      }; }
+      };
         
+}
 }
  
