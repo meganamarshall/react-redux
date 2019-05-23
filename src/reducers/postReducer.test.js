@@ -24,9 +24,9 @@ describe('post reducer', () => {
     const initialState = {
       posts: [{ postId: '1234', postBody: 'hello', postTitle: 'title' }, { postId: '5678', postBody: 'hello there', postTitle: 'title' }]
     };
-    const newState = reducer(initialState, updatePost('1234', 'new bod'));
+    const newState = reducer(initialState, updatePost('1234', 'new body'));
     expect(newState).toEqual({
-      posts: [{ postId: '1234', postBody: 'new bod', postTitle: 'title' }, { postId: '5678', postBody: 'hello there', postTitle: 'title' }]
+      posts: [{ postId: '1234', postBody: 'new body', postTitle: 'title' }, { postId: '5678', postBody: 'hello there', postTitle: 'title' }]
     });
   });
 });

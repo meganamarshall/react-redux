@@ -14,7 +14,7 @@ const deletePost = postId => ({
 
 const updatePost = (postId, postBody) => ({
   type: UPDATE_POST,
-  payload: postId, postBody
+  payload: { postId, postBody }
 });
 
 
