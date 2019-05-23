@@ -11,5 +11,9 @@ export default function reducer(state = {}, action) {
           ...state[action.payload.postId].slice(0, action.payload.commentId), 
           ...state[action.payload.postId].slice(action.payload.commentId + 1)]
       };
+    case DELETE_POST:
+      return {
+        
+      }
   }
 }
