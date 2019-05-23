@@ -12,19 +12,19 @@ describe('post actions', () =>{
     });
   });
   it('creates a delete post action', () => {
-    expect(deletePost('12345')).toEqual({
+    expect(deletePost(0)).toEqual({
       type: DELETE_POST,
-      payload: '12345'
+      payload: 0
     });
   });
   it('creates an update post action', () => {
     const post = {
       postBody: 'hello',
-      postId: '12345'
+      postId: 0
     };
-    expect(updatePost(post)).toEqual({
+    expect(updatePost(post.postId, post.postBody)).toEqual({
       type: UPDATE_POST,
-      payload: post
+      payload: { postId: 0, postBody: 'hello' }
     });
   });
 });
