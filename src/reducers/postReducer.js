@@ -11,13 +11,8 @@ export default function reducer(state = initialState, action) {
     case DELETE_POST:
       return [...state.slice(0, action.payload), ...state.slice(action.payload + 1)];
     case UPDATE_POST:
-      return { ...state, posts: state.posts.filter(({ postId }) => {
-        return postId === action.payload.postId;
-      }).map(post => {
-        return ({ ...state, posts: [{ ...post, postBody: action.payload.postBody }] });
-      })
-      };
-        
-}
+      return [...state.slice(0, action.payload), { ...state[action.payload.postId], postBody: action.payload.postBody }, ...state.slice(action.payload.postId + 1)];
+      
+  }
 }
  

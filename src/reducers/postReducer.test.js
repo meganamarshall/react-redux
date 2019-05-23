@@ -15,11 +15,8 @@ describe('post reducer', () => {
     expect(newState).toEqual([{ postBody: 'hello there', postTitle: 'title' }]);
   });
   it('handles the update post action', () => {
-    const initialState = [{ postBody: 'hello', postTitle: 'title' }, { postBody: 'hello there', postTitle: 'title' }]
-    };
+    const initialState = [{ postBody: 'hello', postTitle: 'title' }, { postBody: 'hello there', postTitle: 'title' }];
     const newState = reducer(initialState, updatePost(0, 'new body'));
-    expect(newState).toEqual({
-      posts: [{ postBody: 'new body', postTitle: 'title' }, { postBody: 'hello there', postTitle: 'title' }]
-    });
+    expect(newState).toEqual([{ postBody: 'new body', postTitle: 'title' }, { postBody: 'hello there', postTitle: 'title' }]);
   });
 });
