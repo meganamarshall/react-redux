@@ -4,7 +4,7 @@ import Post from './Post';
 
 function Posts({ posts, deletePost }) {
   const postList = posts.map(post => (
-    <li key={post.postId}>
+    <li key={post.id}>
       <Post deletePost={deletePost} post={post} />
     </li>
   ));
@@ -18,10 +18,10 @@ function Posts({ posts, deletePost }) {
 
 Posts.propTypes = {
   deletePost: PropTypes.func.isRequired,
-  posts: PropTypes.shape({
+  posts: PropTypes.arrayOf(PropTypes.shape({
     postId: PropTypes.number.isRequired,
     postTitle: PropTypes.string.isRequired
-  })
+  }))
 };
 
 export default Posts;

@@ -5,7 +5,7 @@ function Post({ post, deletePost }) {
   return (
     <>
     <p>{post.postTitle}</p>
-    <button onClick={deletePost.bind(null, post.postId)}>Delete</button>
+    <button onClick={deletePost.bind(null, post.id)}>Delete</button>
     </>
   );
 }
@@ -13,7 +13,7 @@ function Post({ post, deletePost }) {
 Post.propTypes = {
   deletePost: PropTypes.func.isRequired,
   post: PropTypes.shape({
-    postId: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
     postTitle: PropTypes.string.isRequired
   })
 };
