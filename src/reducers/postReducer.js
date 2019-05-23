@@ -1,8 +1,6 @@
-import { addPost, ADD_POST, deletePost, DELETE_POST, updatePost, UPDATE_POST } from '../actions/postActions';
+import { ADD_POST, DELETE_POST, UPDATE_POST } from '../actions/postActions';
 
-const initialState = {
-  posts: []
-};
+const initialState = [];
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
