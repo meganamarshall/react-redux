@@ -27,7 +27,6 @@ describe('comment reducer', () => {
     };
     const newState = reducer(initialState, deletePost(0));
     expect(newState).toEqual({
-      0: []
     });
   });
 });

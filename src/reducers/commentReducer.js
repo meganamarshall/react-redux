@@ -1,4 +1,11 @@
 import { ADD_COMMENT, DELETE_COMMENT } from '../actions/commentActions';
+import { DELETE_POST } from '../actions/postActions';
+
+const deleteCommentsByPost = (state, postId) => {
+  const newState = { ...state };
+  delete newState[postId];
+  return newState;
+};
 
 export default function reducer(state = {}, action) {
   switch(action.type) {
@@ -12,8 +19,9 @@ export default function reducer(state = {}, action) {
           ...state[action.payload.postId].slice(action.payload.commentId + 1)]
       };
     case DELETE_POST:
-      return {
-        
-      }
+      return deleteCommentsByPost(state, action.payload);
+      
+    default:
+      return state;
   }
 }
