@@ -29,6 +29,7 @@ export default class PostForm extends PureComponent {
       <form onSubmit={this.handleSubmit}>
         <input name="title" value={postTitle} onChange={this.handleChange} />
         <textarea name="body" value={postBody} onChange={this.handleChange} />
+        <button>Submit</button>
       </form>
     );
   }
