@@ -9,4 +9,10 @@ describe('post selectors', () => {
       { postTitle: 'hi', postBody: 'wow' }, { postTitle: 'hello', postBody: 'amazing' }, { postTitle: 'really', postBody: 'amazing' }
     ]);
   });
+  it('gets a post by id', () => {
+    const state = {
+      posts: [{ postTitle: 'hi', postBody: 'wow' }, { postTitle: 'hello', postBody: 'amazing' }, { postTitle: 'really', postBody: 'amazing' }]
+    };
+    expect(getPost(state, 0)).toEqual({ postTitle: 'hi', postBody: 'wow' });
+  });
 });
