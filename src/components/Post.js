@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Post({ post, deletePost }) {
   return (
     <>
-    <p>{post.postTitle}</p>
+    <Link to={`posts/${post.id}`}>{post.postTitle}</Link>
     <button onClick={deletePost.bind(null, post.id)}>Delete</button>
     </>
   );
