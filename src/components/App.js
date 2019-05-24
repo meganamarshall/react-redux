@@ -12,7 +12,7 @@ export default function App() {
     <Router>
       <>
       <h1>is this working?</h1>
-      {/* <AllPosts /> */}
+      <AllPosts />
       <CreatePost />
       <Switch>
         <Route path="/allposts" component={AllPosts} />

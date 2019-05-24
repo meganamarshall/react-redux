@@ -2,9 +2,9 @@ const ADD_POST = 'ADD_POST';
 const DELETE_POST = 'DELETE_POST';
 const UPDATE_POST = 'UPDATE_POST';
 
-const addPost = post => ({
+const addPost = (postTitle, postBody) => ({
   type: ADD_POST,
-  payload: post
+  payload: { postTitle, postBody }
 });
 
 const deletePost = postId => ({
