@@ -19,11 +19,11 @@ describe('post actions', () =>{
   it('creates an update post action', () => {
     const post = {
       postBody: 'hello',
-      postId: 0
+      id: 0
     };
-    expect(updatePost(post.postId, post.postBody)).toEqual({
+    expect(updatePost(post.id, post.postBody)).toEqual({
       type: UPDATE_POST,
-      payload: { postId: 0, postBody: 'hello' }
+      payload: { id: 0, postBody: 'hello' }
     });
   });
 });

@@ -8,8 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  deletePost(postId) {
-    dispatch(deletePost(postId)); 
+  deletePost(id) {
+    dispatch(deletePost(id)); 
   }
 });
 

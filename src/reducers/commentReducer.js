@@ -1,9 +1,9 @@
 import { ADD_COMMENT, DELETE_COMMENT } from '../actions/commentActions';
 import { DELETE_POST } from '../actions/postActions';
 
-const deleteCommentsByPost = (state, postId) => {
+const deleteCommentsByPost = (state, id) => {
   const newState = { ...state };
-  delete newState[postId];
+  delete newState[id];
   return newState;
 };
 

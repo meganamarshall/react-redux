@@ -7,14 +7,14 @@ const addPost = (postTitle, postBody) => ({
   payload: { postTitle, postBody }
 });
 
-const deletePost = postId => ({
+const deletePost = id => ({
   type: DELETE_POST,
-  payload: postId
+  payload: id
 });
 
-const updatePost = (postId, postBody) => ({
+const updatePost = (id, postBody) => ({
   type: UPDATE_POST,
-  payload: { postId, postBody }
+  payload: { id, postBody }
 });
 
 
