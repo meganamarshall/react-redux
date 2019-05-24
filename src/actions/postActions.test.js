@@ -3,10 +3,9 @@ import { ADD_POST, addPost, deletePost, DELETE_POST, updatePost, UPDATE_POST } f
 describe('post actions', () =>{
   it('creates and add post action', () => {
     const post = {
-      postBody: 'hello',
-      postId: '12345'
+      postTitle: 'hi', postBody: 'hello'
     };
-    expect(addPost(post)).toEqual({
+    expect(addPost(post.postTitle, post.postBody)).toEqual({
       type: ADD_POST,
       payload: post
     });
