@@ -12,7 +12,7 @@ function PostDetail({ post }) {
 
 PostDetail.propTypes = {
   post: PropTypes.shape({
-    postBody: PropTypes.number.isRequired,
+    postBody: PropTypes.string.isRequired,
     postTitle: PropTypes.string.isRequired
   }).isRequired
 };
