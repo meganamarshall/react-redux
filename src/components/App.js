@@ -3,20 +3,19 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link
 } from 'react-router-dom';
-import AllPosts from '../containers/AllPosts';
-import CreatePost from '../containers/CreatePost';
+import Home from './Home';
+import PostById from '../containers/PostById';
 
 export default function App() {
   return (
     <Router>
       <>
-      <h1>is this working?</h1>
-      <CreatePost />
-      <AllPosts />
+      <Link to="/">Home</Link>
       <Switch>
-        <Route path="/allposts" component={AllPosts} />
-        <Route path="/CreatePost" component={CreatePost} />
+        <Route path="posts/:id" component={PostById} />
+        <Route path="/" component={Home} />
       </Switch>
       </>
     </Router>
