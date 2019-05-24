@@ -18,9 +18,7 @@ function Comments({ comments, deleteComment }) {
 
 Comments.propTypes = {
   deleteComment: PropTypes.func.isRequired,
-  comments: PropTypes.arrayOf(PropTypes.shape({
-    comment: PropTypes.string.isRequired
-  })).isRequired
+  comments: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default Comments;

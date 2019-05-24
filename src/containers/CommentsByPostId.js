@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getComments } from '../selectors/commentSelectors';
+import getComments from '../selectors/commentSelectors';
 import Comments from '../components/Comments';
 import { deleteComment } from '../actions/commentActions';
 
