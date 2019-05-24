@@ -1,19 +1,12 @@
 import { connect } from 'react-redux';
 import PostDetail from '../components/PostDetail';
-import { deletePost } from '../actions/postActions';
 import { getPost } from '../selectors/postSelectors';
 
-const mapStateToProps = state => ({
-  post: getPost(state)
+const mapStateToProps = (state, props) => ({
+  post: getPost(state, props.match.params.id)
 });
 
-const mapDispatchToProps = dispatch => ({
-  deletePost(id) {
-    dispatch(deletePost(id));
-  }
-});
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(PostDetail);

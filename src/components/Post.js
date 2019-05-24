@@ -16,7 +16,7 @@ Post.propTypes = {
   post: PropTypes.shape({
     id: PropTypes.number.isRequired,
     postTitle: PropTypes.string.isRequired
-  })
+  }).isRequired
 };
 
 export default Post;
