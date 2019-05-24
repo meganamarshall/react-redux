@@ -12,8 +12,8 @@ export default function App() {
     <Router>
       <>
       <h1>is this working?</h1>
-      <AllPosts />
       <CreatePost />
+      <AllPosts />
       <Switch>
         <Route path="/allposts" component={AllPosts} />
         <Route path="/CreatePost" component={CreatePost} />
