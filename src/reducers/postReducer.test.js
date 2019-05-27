@@ -4,9 +4,9 @@ import { addPost, deletePost, updatePost } from '../actions/postActions';
 describe('post reducer', () => {
   it('handles the add post action', () => {
     const initialState = [];
-    const newState = reducer(initialState, addPost({ postBody: 'hello', postTitle: 'hello2' }));
+    const newState = reducer(initialState, addPost('hello2', 'hello'));
     expect(newState).toEqual(
-      [{ postBody: 'hello', postTitle: 'hello2' }]
+      [{ postTitle: 'hello2', postBody: 'hello' }]
     );
   });
   it('handles the delete post action', () => {

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component renders the app 1`] = `
+<BrowserRouter>
+  <Link
+    to="/"
+  >
+    Home
+  </Link>
+  <Switch>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(PostDetail)",
+          "type": [Function],
+        }
+      }
+      path="/posts/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/"
+    />
+  </Switch>
+</BrowserRouter>
+`;
