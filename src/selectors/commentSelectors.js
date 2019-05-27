@@ -1,3 +1,3 @@
 export default function getComments(state, postId) {
-  return state[postId] || [];
+  return state.comments[postId] || [];
 }

@@ -18,15 +18,15 @@ export default class CommentForm extends PureComponent {
     this.setState({ comment: '' });
   }
 
-  handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value });
+  updateComment = ({ target }) => {
+    this.setState({ comment: target.value });
   }
 
   render() {
     const { comment } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        Your Comment: <textarea name="comment" value={comment} onChange={this.handleChange} />
+        Your Comment: <textarea name="comment" value={comment} onChange={this.updateComment} />
         <button>Submit</button>
       </form>
     );
